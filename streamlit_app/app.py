@@ -16,12 +16,16 @@ st.markdown("### Nassau Candy Distributor")
 # -----------------------------
 # LOAD DATA
 # -----------------------------
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 recommendations = pd.read_csv(
-    "../outputs/final_recommendations.csv"
+    BASE_DIR / "outputs" / "final_recommendations.csv"
 )
 
 model_data = pd.read_csv(
-    "../data/model_ready/model_ready_data.csv"
+    BASE_DIR / "data" / "model_ready" / "model_ready_data.csv"
 )
 
 # -----------------------------
